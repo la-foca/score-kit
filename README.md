@@ -4,7 +4,7 @@
  
 <b>What is it?</b>
 
-score-kit is a Python package providing useful methods for data analysis, visualization, transformation and modeling, that can be used in banking-specific tasks. It is mainly used for feature binning and scorecards building (logistic regression models on WoE-transformed data), but there are also other features, that can help you to approximate income, calibrate complex models using several scores from different sources, split your data, depending on feature fullness, and so on.
+score-kit is a Python package providing useful methods for data analysis, visualization, transformation and modeling, that can be used in banking-specific tasks. It is mainly used for feature binning and scorecards building (logistic regression models on WoE-transformed data), but there are also other features that can help you approximate income, calibrate complex models using several scores from different sources, split your data depending on feature fullness, etc.
 
 <b>Main features</b>
 
@@ -14,8 +14,8 @@ score-kit is a Python package providing useful methods for data analysis, visual
 - Feature engineering (categorical feature encoding, missing values replacement, crosses by decision trees on several features)
 - One-factor analysis (binning for categorical and interval features using decision trees, gini checker, business logic checker, WoE-stability checker, small bins processing, autofit)
 - Stability analysis (PSI, ER/gini in time)
-- Multifactor analysis (VIF, pair correlation)
-- Modeling (logistic regression, feature selection, ordinal regression, calibration)
+- Multifactor analysis (VIF, pairwise correlation)
+- Modeling (logistic regression, feature selection, ordinal regression, model calibration)
 - Reporting (report generation, scorecard forming, SAS-code export)
 
 <b>Authors</b>

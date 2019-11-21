@@ -56,9 +56,20 @@ class Data:
     ginis: dictionary of features and their ginis (can be calculated by .calc_gini())
     name: name of the Data Object
     compress: should the input data be compressed
+    convert_to_numeric: try to convert object columns to numeric, so there won't be errors for example due to comparison of float and decimal
     '''
 
-    def __init__(self, dataframe, target = None, features = None, weights = None, name = None, compress=False):
+    def __init__(self, dataframe, target = None, features = None, weights = None, name = None, compress=False, convert_to_numeric=True):
+
+        if convert_to_numeric:
+            for col in dataframe:
+                if dataframe[col].dtype.kind=='O':
+                    try:
+                        dataframe[col]=pd.to_numeric(dataframe[col])
+                        print('Attention! Converting',col,'values to numeric dtype!')
+                    except Exception:
+                        pass  
+
         if compress:
             self.dataframe = self.reduce_mem_usage(dataframe)
         else:

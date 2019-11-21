@@ -2429,7 +2429,7 @@ class FeatureWOE:
                     # separate missings
                     boundaries = sorted(boundaries + [max_value + 1])
                     # if remaining group is too small
-                    if min_samples_leaf is not None and (self.data.dataframe[self.data.dataframe[self.feature].apply(lambda x: x < boundaries[-2] and x >= boundaries[-3])].shape[0] < min_samples_leaf):
+                    if min_samples_leaf is not None and (x_train[x_train.apply(lambda x: x < boundaries[-2] and x >= boundaries[-3])].shape[0] < min_samples_leaf):
                         # unite 2 last groups (non-missing)
                         # possible due to the earlier check for few non-missings
                         boundaries.remove(boundaries[-3])

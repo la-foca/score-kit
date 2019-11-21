@@ -1057,7 +1057,7 @@ class FeatureWOE:
         self.pre_groups = {}
         self.alpha = alpha
         # edited on 21-Jun-2018 by Anna Goreva
-        self.gini_history = {'Train':[], 'Validate':[], 'Test':[]}
+        self.gini_history = {'Train':[0], 'Validate':[0], 'Test':[0]}
         # edited 14.08.2018 by Yudochev Dmitry
         self.simple=simple
         self.n_folds=n_folds

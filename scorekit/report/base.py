@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from ..data import Data, DataSamples
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
@@ -814,9 +815,9 @@ class ModelReport(SubReport):
             print('Attention! No DataSamples\Data object for calibration specified. Using DS_woe.train instead..')
             self.data_calibration = DS_woe.train
         else:    
-            if type(data_calibration) == Datasamples: 
+            if type(data_calibration) == DataSamples: 
                 self.data_calibration = data_calibration.train
-            elif type(data_raw) == Data:
+            elif type(data_calibration) == Data:
                 self.data_calibration = data_calibration
         self.round_digits = round_digits
 

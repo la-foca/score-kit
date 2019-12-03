@@ -2168,10 +2168,10 @@ class FeatureWOE:
 
         test_fold = [-1 for x in range(x_train.shape[0])]+[0 for x in range(x_train.shape[0])]
         gridsearch = GridSearchCV(dtree, parameters_grid, scoring=scoring,
-                                  cv=cv if cv!=1 else PredefinedSplit(test_fold=test_fold),
-                                  fit_params = None if self.data.weights is None else {'sample_weight': w_train})
+                                  cv=cv if cv!=1 else PredefinedSplit(test_fold=test_fold))
 
-        gridsearch.fit(x_train[:, None] if cv!=1 else x_train2[:, None], y_train if cv!=1 else y_train2)
+        gridsearch.fit(x_train[:, None] if cv!=1 else x_train2[:, None], y_train if cv!=1 else y_train2,
+                                  sample_weight = None if self.data.weights is None else w_train)
 
         return gridsearch.best_estimator_
 

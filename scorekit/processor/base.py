@@ -1067,7 +1067,7 @@ class VIF(Processor):
             iteration=iteration+1
             s = sample.target + ' ~ '
             for f in features:
-                s = s + f + '+'
+                s = s + 'Q("' + f + '")+'
             s = s[:-1]
 
             # Break into left and right hand side; y and X
